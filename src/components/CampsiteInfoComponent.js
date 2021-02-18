@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem} from 're
 import {Control, LocalForm, Errors} from 'react-redux-form';
 import {Button, Modal, ModalHeader, ModalBody,Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../shared/baseUrl';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
@@ -97,7 +98,7 @@ handleSubmit(values) {
     return (
       <div className="col-md-5 m-1">
         <Card>
-          <CardImg top src={campsite.image} alt={campsite.name} />
+        <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
           <CardBody>
               <CardText>{campsite.description}</CardText>
           </CardBody>
