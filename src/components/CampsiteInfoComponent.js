@@ -29,7 +29,7 @@ toggleModal() {
 
 handleSubmit(values) {
     this.toggleModal();
-    this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
+    this.props.postComment(this.props.campsiteId, values.rating, values.author, values.text);
 }
   render () {
     return(
@@ -107,7 +107,7 @@ handleSubmit(values) {
     );
   }
 
-  function RenderComments ({comments,addComment, campsiteId}) {
+  function RenderComments ({comments,postComment, campsiteId}) {
     if (comments) {
       return (
         <div className="col-md-5 m-1">
@@ -125,7 +125,7 @@ handleSubmit(values) {
             </div>
           );
   })}
-  <CommentForm campsiteId={campsiteId} addComment={addComment} />
+ <CommentForm campsiteId={campsiteId} postComment={postComment} />
         </div>
       );
     }
@@ -149,7 +149,7 @@ handleSubmit(values) {
             <div className="row">
                 <RenderCampsite campsite={props.campsite} />
                 <RenderComments comments={props.comments} 
-                addComment={props.addComment}
+                postomment={props.postComment}
                 campsiteId={props.campsite.id}/>
               
             </div>
