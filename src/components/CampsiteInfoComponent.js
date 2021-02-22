@@ -102,6 +102,7 @@ handleSubmit(values) {
                 in
                 transformProps={{
                     exitTransform: 'scale(0.5) translateY(-50%)'
+
                 }}>
         <Card>
         <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
